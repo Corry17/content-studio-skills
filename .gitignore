@@ -1,0 +1,17 @@
+# Qoder Skill 依赖与缓存
+node_modules/
+.npm-cache/
+__pycache__/
+*.pyc
+
+# 系统文件
+.DS_Store
+
+# 用户素材：工作项目里的原始文件不对外发布
+projects/*/materials/
+ppt-projects/*/materials/
+
+# 私有审阅记录（反馈、确认原话、配置快照）
+projects/*/review/
+ppt-projects/*/review/
+examples/*/review/

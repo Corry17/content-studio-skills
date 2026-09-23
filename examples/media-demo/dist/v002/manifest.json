@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "slug": "media-demo",
+  "title": "本地媒体与附件示例",
+  "version": "v002",
+  "resources": [
+    {
+      "id": "sample-image",
+      "title": "自动生成的示例图",
+      "alt": "蓝绿渐变验证图",
+      "caption": "仅用于验证图片加载，不是用户研究数据。",
+      "href": "assets/images/sample-image--21628b066ea9.png",
+      "sha256": "21628b066ea9142e5f91e737170e429c2ea27a04d5e32f4cc7f073b42bc6c325",
+      "size": 15402,
+      "kind": "images",
+      "use": "embed",
+      "mime": "application/octet-stream"
+    },
+    {
+      "id": "sample-audio",
+      "title": "两秒静音音频",
+      "caption": "可检查播放进度，无声音，避免干扰。",
+      "href": "assets/audio/sample-audio--78f82cd49af8.wav",
+      "sha256": "78f82cd49af869013e8ec414a15d71f5f4f2ec8d006b6a0c50527c91eaa7a85f",
+      "size": 32044,
+      "kind": "audio",
+      "use": "embed",
+      "mime": "audio/wav"
+    },
+    {
+      "id": "sample-file",
+      "title": "中文名与井号附件",
+      "href": "assets/files/sample-file--711cac8405a3.txt",
+      "sha256": "711cac8405a31b2f02fca22fe06bd3257005360e7cc5c9f4344be923da5b6766",
+      "size": 98,
+      "kind": "files",
+      "use": "attachment",
+      "mime": "application/octet-stream",
+      "preview_href": "previews/sample-file.html"
+    }
+  ],
+  "links": []
+}

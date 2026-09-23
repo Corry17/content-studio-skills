@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "slug": "media-demo",
+  "title": "本地媒体与附件示例",
+  "purpose": "自定义：填写你想做的内容，不限于总结",
+  "audience": "填写给谁看",
+  "content_policy": "按用户要求创作或保留原文，不虚构事实",
+  "mode": "scroll",
+  "style": "ask",
+  "style_notes": "先预览再选样式；可填写品牌色、参考图或其他设计要求",
+  "duration_minutes": null,
+  "outline": [],
+  "resources": [
+    {
+      "id": "sample-image",
+      "path": "materials/images/示例 图 #1.png",
+      "title": "自动生成的示例图",
+      "use": "embed",
+      "alt": "蓝绿渐变验证图",
+      "caption": "仅用于验证图片加载，不是用户研究数据。"
+    },
+    {
+      "id": "sample-audio",
+      "path": "materials/audio/静音示例.wav",
+      "title": "两秒静音音频",
+      "use": "embed",
+      "caption": "可检查播放进度，无声音，避免干扰。"
+    },
+    {
+      "id": "sample-file",
+      "path": "materials/files/本地附件 #1.txt",
+      "title": "中文名与井号附件",
+      "use": "attachment"
+    }
+  ],
+  "links": [],
+  "notes": "将原始文件放到 materials 对应目录，告诉助手用途即可。资源未加入清单前不会被打包。"
+}

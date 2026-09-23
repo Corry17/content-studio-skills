@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "slug": "my-report",
+  "title": "我的汇报或答辩",
+  "purpose": "填写汇报、答辩或其他用途",
+  "audience": "填写听众与期望",
+  "duration_minutes": 15,
+  "presenter": "",
+  "tone": "ask",
+  "tone_notes": "简洁、正式、克制；可以自由指定表达方式、配色和图文密度",
+  "custom_tone": {},
+  "aspect_ratio": "16:9",
+  "template": null,
+  "speaker_notes": true,
+  "slides": []
+}

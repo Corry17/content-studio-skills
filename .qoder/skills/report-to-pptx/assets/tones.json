@@ -1,0 +1,14 @@
+{
+  "academic-blue": { "name": "学术白蓝", "background": "FFFFFF", "text": "1E293B", "muted": "526071", "accent": "244A73", "surface": "EEF3F8", "fontFace": "Microsoft YaHei" },
+  "business-slate": { "name": "商务灰蓝", "background": "FFFFFF", "text": "232B36", "muted": "596370", "accent": "3A526B", "surface": "EFF1F4", "fontFace": "Microsoft YaHei", "coverLayout": "panel" },
+  "warm-neutral": { "name": "温和米白", "background": "FAF8F3", "text": "302E2A", "muted": "696056", "accent": "795538", "surface": "EEE9DF", "fontFace": "Microsoft YaHei", "coverLayout": "centered", "titleFontFace": "SimSun" },
+  "quiet-green": { "name": "沉稳青绿", "background": "FFFFFF", "text": "26332F", "muted": "56665E", "accent": "35614F", "surface": "EDF3EF", "fontFace": "Microsoft YaHei", "panelStyle": "outline" },
+  "ink-mono": { "name": "黑白极简", "background": "FFFFFF", "text": "202124", "muted": "52565B", "accent": "30363C", "surface": "F1F2F3", "fontFace": "Microsoft YaHei", "coverLayout": "centered", "panelStyle": "none" },
+  "classic-burgundy": { "name": "学院酒红", "background": "FFFEFC", "text": "2F2528", "muted": "69535B", "accent": "752D43", "surface": "F4ECEF", "fontFace": "Microsoft YaHei", "titleFontFace": "SimSun", "panelStyle": "outline" },
+  "slate-indigo": { "name": "理性靛蓝", "background": "F8F9FD", "text": "242A3D", "muted": "566079", "accent": "444F86", "surface": "EDF0F8", "fontFace": "Microsoft YaHei", "coverLayout": "panel" },
+  "teal-white": { "name": "清朗青蓝", "background": "FFFFFF", "text": "203139", "muted": "506570", "accent": "1F6172", "surface": "EDF5F7", "fontFace": "Microsoft YaHei", "coverLayout": "centered", "panelStyle": "outline" },
+  "sandstone": { "name": "岩砂暖灰", "background": "FAF9F6", "text": "332F29", "muted": "665E53", "accent": "786040", "surface": "EEEAE2", "fontFace": "Microsoft YaHei", "titleFontFace": "SimSun", "panelStyle": "none" },
+  "olive-paper": { "name": "橄榄纸白", "background": "FBFBF5", "text": "31372B", "muted": "5D6650", "accent": "556638", "surface": "EEF1E5", "fontFace": "Microsoft YaHei", "coverLayout": "panel", "titleFontFace": "SimSun" },
+  "navy-focus": { "name": "藏蓝聚焦", "background": "FFFFFF", "text": "1F2B3A", "muted": "526276", "accent": "263F65", "surface": "ECF1F7", "fontFace": "Microsoft YaHei", "coverLayout": "centered", "panelStyle": "none" },
+  "steel-blue": { "name": "钢蓝工程", "background": "F8FAFC", "text": "253342", "muted": "586878", "accent": "3D5D78", "surface": "EAF0F5", "fontFace": "Microsoft YaHei", "coverLayout": "panel", "panelStyle": "outline" }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "report-to-pptx-skill",
+  "version": "1.0.0",
+  "private": true,
+  "description": "克制、可编辑的汇报与答辩 PPTX 生成骨架",
+  "engines": { "node": ">=18" },
+  "scripts": { "test": "node --test scripts/build.test.cjs" },
+  "dependencies": { "pptxgenjs": "4.0.1" }
+}

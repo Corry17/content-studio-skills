@@ -1,0 +1,13 @@
+{
+  "slides": 12,
+  "aspect_ratio": "16:9",
+  "tones": [
+    "学术白蓝",
+    "商务灰蓝",
+    "温和米白",
+    "沉稳青绿"
+  ],
+  "native_objects": true,
+  "rendered": false,
+  "attachments": []
+}
