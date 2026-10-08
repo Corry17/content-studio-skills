@@ -22,7 +22,7 @@
 ## P2 工程与发布
 
 - [ ] **全局安装**：`~/.qoder/skills/` 当前由 root 拥有且不可写，技能只在项目内可用；确认权限方案后再提供全局安装脚本或说明。
-- [ ] **GitHub 发布**：推送 `main` 与 `archive/initial-snapshot`；如需 CI，可在 GitHub Actions 里跑三个测试命令。
+- [ ] **CI（可选）**：需要时在 GitHub Actions 里跑三个测试命令；当前未配置。
 - [ ] **许可证与贡献说明**：确定是否添加 LICENSE、CONTRIBUTING；添加前保持默认版权。
 - [ ] **版本发布记录**：首个正式 tag（如 `v0.1.0`）在渲染验收与截图验收完成后打。
 - [ ] **文档一致性检查**：技能或脚本更新后，核对 README、CHANGELOG、TODO 与 `使用说明.md` 是否同步。

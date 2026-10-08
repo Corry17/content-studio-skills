@@ -2,6 +2,12 @@
 
 按功能批次归纳，日期为完成时间。仓库为新建（2026-09-23 首次提交），此前演进没有逐条 Git 提交，已保留为 `archive/initial-snapshot` 分支的源码快照和下方说明；不虚构旧提交历史。
 
+## 2026-10-08
+
+- 发布到 GitHub 公开仓库 `github.com/Corry17/content-studio-skills`（含 `main` 与 `archive/initial-snapshot` 分支）。
+- 新增 `部署指南.md`：GitHub 发布、阿里云轻量服务器部署（nginx）、域名与免费 HTTPS、GitHub Pages 备选。
+- 仓库发布范围排除个人真实项目 `projects/zhuanzheng-defense/`（写入 `.gitignore`）。
+
 ## 2026-09-28
 
 - 网页版工作室新增版式设置，风格不再只是配色：网页端可调阅读宽度、排版密度、要点样式（卡片/编号列表/简洁列表）、标题字体与封面布局；PPT 端可调封面结构、标题字体与信息密度，页面示意与生成文件同步生效。

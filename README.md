@@ -45,7 +45,7 @@ npm install --prefix "<skill-dir>" --ignore-scripts --no-audit --no-fund
 2. 右侧选择 12 种网页风格或 12 种 PPT 基调，实时预览；风格不只是配色——还可调整阅读宽度、排版密度、要点样式、标题字体与封面布局（网页），以及封面结构、标题字体与信息密度（PPT）；下载单文件 `index.html`，或生成原生 `.pptx`（含备注）。
 3. 「导出配置」备份全部内容；「导出 presentation.json」放进 `ppt-projects/<slug>/` 后，可交给 `/report-to-pptx` 继续做图表、附件、迭代与审阅。
 
-网页版是快速出稿入口；图表、视频、素材文件夹扫描与审阅流程仍走对话。页面内的 PPT 示意不是 Office 实际渲染，生成文件请用 PowerPoint / WPS 复核。
+网页版是快速出稿入口；图表、视频、素材文件夹扫描与审阅流程仍走对话。页面内的 PPT 示意不是 Office 实际渲染，生成文件请用 PowerPoint / WPS 复核。上线到公网的步骤见 [部署指南.md](部署指南.md)。
 
 ## 让助手操作的命令
 
@@ -89,7 +89,8 @@ python3 "<skill-dir>/scripts/review.py" register ppt-projects/<slug> v001
 ├── projects/my-project/           # 网页项目模板（BRIEF + 配置）
 ├── ppt-projects/my-report/        # PPT 项目模板 + v001/v002 基调样张
 ├── examples/media-demo/           # 图片、音频、文本附件示例包（含 ZIP）
-└── 使用说明.md                    # 面向使用的完整说明
+├── 使用说明.md                    # 面向使用的完整说明
+└── 部署指南.md                    # 发布到 GitHub 与阿里云上线的步骤
 ```
 
 ## 主要特性
