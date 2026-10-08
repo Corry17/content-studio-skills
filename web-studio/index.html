@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="网页版内容工作室：在浏览器里直接生成 H5 网页与 PPTX，全程本地运行，不上传任何内容。">
+<title>网页版工作室 · 生成 H5 与 PPT</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="app-header">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">≋</span>
+    <div>
+      <h1>网页版工作室</h1>
+      <p>在浏览器里直接生成 H5 网页与 PPTX · 全程本地运行，不上传任何内容</p>
+    </div>
+  </div>
+  <div class="header-badges">
+    <span class="badge">离线可用</span>
+    <span class="badge">12 网页风格</span>
+    <span class="badge">12 PPT 基调</span>
+  </div>
+</header>
+
+<main class="app-main">
+  <!-- 左：内容编辑 -->
+  <section class="panel" aria-label="内容编辑">
+    <h2 class="panel-title">① 基本信息</h2>
+    <div class="field-grid">
+      <label class="wide">标题
+        <input id="meta-title" type="text" maxlength="80" placeholder="例如：项目中期汇报" autocomplete="off">
+      </label>
+      <label class="wide">副标题 / 一句话说明
+        <input id="meta-subtitle" type="text" maxlength="120" placeholder="用于封面副标题与 PPT 页脚" autocomplete="off">
+      </label>
+      <label>汇报人（仅 PPT 封面）
+        <input id="meta-presenter" type="text" maxlength="60" placeholder="可留空" autocomplete="off">
+      </label>
+      <label>文件名标识 slug（ASCII）
+        <input id="meta-slug" type="text" maxlength="48" placeholder="my-report" autocomplete="off" spellcheck="false">
+      </label>
+    </div>
+
+    <h2 class="panel-title" style="margin-top:16px">② 内容板块 <span class="hint">标题下的「更多」里可以加段落、要点、表格、图片和演讲备注</span></h2>
+    <div id="sections" class="sections"></div>
+    <div class="panel-foot">
+      <button id="add-section" class="btn btn-small" type="button">＋ 添加板块</button>
+      <button id="reset" class="btn btn-small" type="button">恢复示例内容</button>
+    </div>
+    <p class="hint">内容自动保存在本机浏览器；随时可用「导出配置」备份成文件。</p>
+  </section>
+
+  <!-- 右：预览与生成 -->
+  <section class="panel" aria-label="预览与生成">
+    <div class="tabs" role="tablist" aria-label="输出格式">
+      <button class="tab" type="button" role="tab" data-tab="h5" aria-selected="true">H5 网页</button>
+      <button class="tab" type="button" role="tab" data-tab="ppt" aria-selected="false">PPT 汇报</button>
+    </div>
+    <p id="status" class="status" role="status" aria-live="polite">正在载入…</p>
+
+    <div class="tab-panel" data-tab-panel="h5">
+      <h3 class="panel-title">③ 选择网页风格 <span class="hint">与技能的同名风格一致，点击即切换预览</span></h3>
+      <div id="style-grid" class="chip-grid"></div>
+      <div class="row">
+        <span class="row-label">阅读形式</span>
+        <div id="mode-picker" class="segmented" role="group" aria-label="阅读形式">
+          <button type="button" data-mode="scroll" aria-pressed="true">长页阅读</button>
+          <button type="button" data-mode="deck" aria-pressed="false">翻页演示</button>
+        </div>
+        <span class="hint">翻页演示支持键盘 ← → 或按钮翻页</span>
+      </div>
+      <div class="layout-grid" aria-label="网页版式设置">
+        <label>阅读宽度
+          <select data-setting="width">
+            <option value="auto">跟随风格</option>
+            <option value="narrow">窄（约 880px）</option>
+            <option value="standard">标准（约 1240px）</option>
+            <option value="wide">宽（约 1600px）</option>
+          </select>
+        </label>
+        <label>排版密度
+          <select data-setting="density">
+            <option value="standard">标准</option>
+            <option value="compact">紧凑</option>
+            <option value="relaxed">宽松</option>
+          </select>
+        </label>
+        <label>要点样式
+          <select data-setting="points">
+            <option value="cards">默认（随风格）</option>
+            <option value="list">编号列表</option>
+            <option value="plain">简洁列表</option>
+          </select>
+        </label>
+        <label>标题字体
+          <select data-setting="title">
+            <option value="auto">跟随风格</option>
+            <option value="sans">无衬线</option>
+            <option value="serif">衬线（宋体）</option>
+          </select>
+        </label>
+        <label>封面布局
+          <select data-setting="cover">
+            <option value="auto">跟随风格</option>
+            <option value="classic">经典左对齐</option>
+            <option value="centered">居中</option>
+            <option value="panel">色块面板</option>
+          </select>
+        </label>
+      </div>
+      <div class="actions">
+        <button id="download-html" class="btn btn-primary" type="button">下载 index.html</button>
+        <button id="export-config" class="btn" type="button">导出配置</button>
+        <button id="import-config" class="btn" type="button">导入配置</button>
+      </div>
+      <div class="preview-card">
+        <div class="preview-head">
+          <span>实时预览（就是最终文件：单文件、离线、可打印）</span>
+          <span class="hint">目录与翻页在预览里可以直接操作</span>
+        </div>
+        <iframe id="html-preview" title="网页实时预览"></iframe>
+      </div>
+    </div>
+
+    <div class="tab-panel" data-tab-panel="ppt" hidden>
+      <h3 class="panel-title">③ 选择 PPT 基调 <span class="hint">与 /report-to-pptx 的基调同名同色</span></h3>
+      <div id="tone-grid" class="chip-grid"></div>
+      <div class="layout-grid" aria-label="PPT 版式设置">
+        <label>封面结构
+          <select data-setting="pptCover">
+            <option value="auto">跟随基调</option>
+            <option value="classic">经典左对齐</option>
+            <option value="centered">居中</option>
+            <option value="panel">色块面板</option>
+          </select>
+        </label>
+        <label>标题字体
+          <select data-setting="pptTitleFont">
+            <option value="auto">跟随基调</option>
+            <option value="yahei">微软雅黑</option>
+            <option value="song">宋体</option>
+          </select>
+        </label>
+        <label>信息密度
+          <select data-setting="pptDensity">
+            <option value="standard">标准</option>
+            <option value="compact">紧凑</option>
+            <option value="relaxed">宽松</option>
+          </select>
+        </label>
+      </div>
+      <p class="hint">版式设置会直接写入生成文件；基调里的封面结构只是默认值，可在这里覆盖。</p>
+      <div class="actions">
+        <label class="version-label">版本 <input id="version" type="text" value="v001" maxlength="4" spellcheck="false" aria-label="版本号，例如 v001"></label>
+        <button id="generate-pptx" class="btn btn-primary" type="button">生成并下载 .pptx</button>
+        <button id="export-presentation" class="btn" type="button">导出 presentation.json</button>
+      </div>
+      <p id="ppt-hints" class="hint"></p>
+      <div class="preview-card">
+        <div class="preview-head">
+          <span>页面示意（非 Office 实际渲染，版式与生成文件一致）</span>
+          <span class="mock-nav">
+            <button id="mock-prev" type="button" aria-label="上一页">‹</button>
+            <span id="mock-label">1 / 1</span>
+            <button id="mock-next" type="button" aria-label="下一页">›</button>
+          </span>
+        </div>
+        <div id="ppt-mock" class="ppt-mock" aria-label="PPT 页面示意"></div>
+      </div>
+    </div>
+
+    <p class="footnote">
+      网页版是快速出稿入口：内容、要点、表格与图片都在本机处理。需要扫描素材文件夹、图表、附件打包、版本审阅与迭代时，继续使用
+      <code>/summary-to-html</code> 与 <code>/report-to-pptx</code>。两者可配合：导出的
+      <code>presentation.json</code> 放进 <code>ppt-projects/&lt;slug&gt;/</code> 后可由技能继续制作。
+    </p>
+  </section>
+</main>
+
+<input type="file" id="import-file" accept=".json,application/json" hidden>
+
+<!-- 生成依赖：PptxGenJS 4.0.1 自包含浏览器包（含 JSZip，MIT，见 vendor/pptxgenjs.LICENSE.txt），离线加载 -->
+<script src="vendor/pptxgen.bundle.js"></script>
+<script src="data.js"></script>
+<script src="build-h5.js"></script>
+<script src="build-ppt.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

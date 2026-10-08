@@ -1,6 +1,6 @@
 # 内容网页与汇报 PPT 工作室
 
-两个 Qoder Agent Skill：把资料做成可分享的 **H5 / HTML**，或可编辑的 **汇报 / 答辩 PPTX**。
+两个 Qoder Agent Skill：把资料做成可分享的 **H5 / HTML**，或可编辑的 **汇报 / 答辩 PPTX**。另附**离线网页版工作室** [`web-studio/`](web-studio/index.html)：在浏览器里直接填内容、选风格或基调，一键生成 H5 或 PPTX，全程本地运行、不上传数据。
 
 - 不限于总结：支持答辩、汇报、课程、作品集、资料导航和自定义内容。
 - 内置 **12 种网页风格** 与 **12 种 PPT 基调**，也可以完全自定义。
@@ -36,6 +36,16 @@ PPT 技能首次使用需要安装依赖（仅 PptxGenJS，不装全局软件）
 ```bash
 npm install --prefix "<skill-dir>" --ignore-scripts --no-audit --no-fund
 ```
+
+## 网页版工作室（直接生成，不走对话）
+
+打开 [`web-studio/index.html`](web-studio/index.html)（双击即可，纯离线、不上传）：
+
+1. 左侧填写标题与内容板块：段落、要点、表格、图片（本地压缩）、演讲备注。
+2. 右侧选择 12 种网页风格或 12 种 PPT 基调，实时预览；风格不只是配色——还可调整阅读宽度、排版密度、要点样式、标题字体与封面布局（网页），以及封面结构、标题字体与信息密度（PPT）；下载单文件 `index.html`，或生成原生 `.pptx`（含备注）。
+3. 「导出配置」备份全部内容；「导出 presentation.json」放进 `ppt-projects/<slug>/` 后，可交给 `/report-to-pptx` 继续做图表、附件、迭代与审阅。
+
+网页版是快速出稿入口；图表、视频、素材文件夹扫描与审阅流程仍走对话。页面内的 PPT 示意不是 Office 实际渲染，生成文件请用 PowerPoint / WPS 复核。
 
 ## 让助手操作的命令
 
@@ -75,6 +85,7 @@ python3 "<skill-dir>/scripts/review.py" register ppt-projects/<slug> v001
 │       ├── package.json           # 仅 PptxGenJS 依赖
 │       └── scripts/               # 生成骨架、检查器、审阅工具与测试
 ├── style-preview.html             # 12 种网页风格交互预览
+├── web-studio/                    # 网页版工作室：浏览器内直接生成 H5 与 PPTX
 ├── projects/my-project/           # 网页项目模板（BRIEF + 配置）
 ├── ppt-projects/my-report/        # PPT 项目模板 + v001/v002 基调样张
 ├── examples/media-demo/           # 图片、音频、文本附件示例包（含 ZIP）
@@ -108,6 +119,7 @@ python3 "<skill-dir>/scripts/review.py" register ppt-projects/<slug> v001
 python3 -B -m unittest discover -s .qoder/skills/summary-to-html/scripts -p 'test_*.py'
 python3 -B -m unittest discover -s .qoder/skills/report-to-pptx/scripts -p 'test_*.py'
 npm test --prefix .qoder/skills/report-to-pptx
+node web-studio/smoke-test.cjs
 ```
 
 ## 已知限制与待办

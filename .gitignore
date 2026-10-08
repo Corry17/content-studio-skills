@@ -11,7 +11,14 @@ __pycache__/
 projects/*/materials/
 ppt-projects/*/materials/
 
+# 个人真实项目不公开发布（示例模板与演示项目除外）
+projects/zhuanzheng-defense/
+
 # 私有审阅记录（反馈、确认原话、配置快照）
 projects/*/review/
 ppt-projects/*/review/
 examples/*/review/
+
+# 网页版工作室的验证产物（冒烟测试与自动化验证生成，可随时删除）
+web-studio/_smoke-*
+web-studio/_subagent-*
